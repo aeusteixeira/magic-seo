@@ -1,0 +1,17 @@
+{
+    "name": "aeusteixeira/magic-seo",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Aeusteixeira\\MagicSeo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Matheus Teixeira",
+            "email": "contato.matheusteixeira@gmail.com"
+        }
+    ],
+    "require": {}
+}
