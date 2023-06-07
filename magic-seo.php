@@ -3,15 +3,11 @@
 require __DIR__ . '/vendor/autoload.php';
 
 use Aeusteixeira\MagicSeo\MetaTags\MetaTagsGenerator;
+use Aeusteixeira\MagicSeo\RobotsTxt\RobotsTxtGenerator;
 
-$metaTags = new MetaTagsGenerator();
-$metaTags->setTitle('Título da página');
-$metaTags->setDescription('Descrição da página');
-$metaTags->setKeywords('palavra-chave 1, palavra-chave 2, palavra-chave 3');
-$metaTags->setAuthor('Matheus Teixeira');
-$metaTags->setPublicationDate('2021-01-01');
-$metaTags->setLanguage('pt-br');
-$metaTags->setCopyright('');
-$metaTags->setWebPageStructuredData();
-
-echo $metaTags->generateAllTags() . PHP_EOL;
+$robotsTxtGenerator = new RobotsTxtGenerator();
+$robotsTxtGenerator->allow('/path1');
+$robotsTxtGenerator->allow('/path2');
+$robotsTxtGenerator->disallow('/path2');
+$robotsTxtGenerator->setSitemap('https://example.com/sitemap.xml');
+$robotsTxtGenerator->writeToFile(__DIR__ . '/robots.txt');

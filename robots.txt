@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /path1
+Allow: /path2
+Disallow: /path2
+Sitemap: https://example.com/sitemap.xml
