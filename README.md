@@ -1,3 +1,4 @@
+
 # MagicSEO
 ![enter image description here](https://raw.githubusercontent.com/aeusteixeira/magic-seo/master/public/logo.png)
 
@@ -10,30 +11,87 @@ MagicSEO é um pacote PHP desenvolvido para facilitar a otimização de sites pa
 
 ## Como usar
 1 - Instale o pacote usando o Composer:
-```bash
+```bash  
 composer require aeusteixeira/magic-seo
 ```
 2 - Importe as classes e funções necessárias em seus arquivos PHP:
+```php  
+use Aeusteixeira\MagicSeo\MetaTags\MetaTagsGenerator;  
+use Aeusteixeira\MagicSeo\RobotsTxt\RobotsTxtGenerator;  
+```  
+3 - Crie uma instância da classe desejada e use seus métodos para gerar os elementos de SEO necessários:
+```php  
+$metaTags->setTitle("Magic SEO");
+$metaTags->setDescription("Biblioteca PHP para gerar tags de SEO automaticamente");
+$metaTags->setKeywords("magic seo, seo automatic com php");
+$metaTags->setAuthor("Matheus Teixeira");
+$metaTags->setPublicationDate("07/06/2023");
+```  
+
+4 - Gere as meta tags usando o método `generateAllTags()`:
+
+```php
+$tags = $metaTags->generateAllTags();
+echo $tags;
+```  
+Exemplo completo:
 ```php
 use Aeusteixeira\MagicSeo\MetaTags\MetaTagsGenerator;
-use Aeusteixeira\MagicSeo\RobotsTxt\RobotsTxtGenerator;
-```
-3 - Crie uma instância da classe desejada e use seus métodos para gerar os elementos de SEO necessários:
-```php
-// Geração de Meta Tags
-$metaTagsGenerator = new MetaTagsGenerator(
-                    'Título da Página',
-                    'Descrição da Página',
-                    'Palavras-chave da Página');
-$tagTitulo = $metaTagsGenerator->gerarTagTitulo();
-$tagDescricao = $metaTagsGenerator->gerarTagDescricao();
-$tagPalavrasChave = $metaTagsGenerator->gerarTagPalavrasChave();
 
-// Geração de Robots.txt
-$robotsTxtGenerator = new RobotsTxtGenerator();
-$robotsTxt = $robotsTxtGenerator->gerarRobotsTxt();
-```
-## Instalação
+$metaTags = new MetaTagsGenerator();
+$metaTags->setTitle("Magic SEO");
+$metaTags->setDescription("Biblioteca PHP para gerar tags de SEO automaticamente");
+$metaTags->setKeywords("magic seo, seo automatic com php");
+$metaTags->setAuthor("Matheus Teixeira");
+$metaTags->setPublicationDate("07/06/2023");
+// Defina outros atributos conforme necessário
+
+$tags = $metaTags->generateAllTags();
+echo $tags;
+```  
+Isso irá gerar as meta tags HTML adequadas para a página, que você pode incluir no `<head>` do seu arquivo HTML.
+
+## Geração de Robots.txt
+Para gerar o arquivo robots.txt, siga os passos abaixo:
+ 
+1 - Importe a classe `RobotsTxtGenerator` em seu arquivo PHP:
+
+```php
+use Aeusteixeira\MagicSeo\RobotsTxt\RobotsTxtGenerator;` 
+``` 
+2 - Crie uma instância da classe `RobotsTxtGenerator`:
+
+```php
+$robotsTxt = new RobotsTxtGenerator();
+``` 
+3 - Defina as instruções para os motores de busca, como quais páginas eles podem ou não indexar:
+
+```php
+$robotsTxt->addUserAgent('*');
+$robotsTxt->allow('/pasta-publica/');
+$robotsTxt->disallow('/pasta-privada/');
+// Adicione outras instruções conforme necessário` 
+``` 
+4 - Gere o conteúdo do arquivo robots.txt usando o método `generateContent()`:
+
+```php
+$content = $robotsTxt->generateContent();
+echo $content;` 
+``` 
+Exemplo completo:
+```php
+use Aeusteixeira\MagicSeo\RobotsTxt\RobotsTxtGenerator;
+
+$robotsTxt = new RobotsTxtGenerator();
+$robotsTxt->addUserAgent('*');
+$robotsTxt->allow('/pasta-publica/');
+$robotsTxt->disallow('/pasta-privada/');
+// Adicione outras instruções conforme necessário
+
+$content = $robotsTxt->generateContent();
+echo $content;
+``` 
+Isso irá gerar o conteúdo do arquivo robots.txt com as instruções definidas, que você pode salvar em um arquivo físico chamado "robots.txt".
 
 ## Licença
 MagicSEO é um software de código aberto licenciado sob a [licença MIT](https://opensource.org/licenses/MIT).
