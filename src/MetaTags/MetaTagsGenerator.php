@@ -11,7 +11,8 @@ class MetaTagsGenerator
     private string $publicationDate;
     private string $language = 'pt-br';
     private string $copyright = '';
-    private array $structuredData;
+    private array $structuredData = [];
+
 
 
     /**
