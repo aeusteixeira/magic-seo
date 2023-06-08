@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MagicSEO é um pacote PHP desenvolvido para facilitar a otimização de sites para mecanismos de busca (SEO).">
+    <meta name="keywords" content="MagicSEO, SEO, otimização, mecanismos de busca">
+    <meta name="author" content="Matheus Teixeira (@aeusteixeira)">
+    <meta name="date" content="2023-06-05">
+    <meta name="language" content="pt-BR">
+    <title>MagicSEO - Otimização de Sites para SEO</title>
+
+    <!-- Meta tags sociais -->
+    <meta property="og:title" content="MagicSEO - Otimização de Sites para SEO">
+    <meta property="og:description" content="MagicSEO é um pacote PHP desenvolvido para facilitar a otimização de sites para mecanismos de busca (SEO).">
+    <meta name="twitter:title" content="MagicSEO - Otimização de Sites para SEO">
+    <meta name="twitter:description" content="MagicSEO é um pacote PHP desenvolvido para facilitar a otimização de sites para mecanismos de busca (SEO).">
+    <meta property="og:image" content="public/cover.jpg">
+    <meta name="twitter:image" content="public/cover.jpg">
+    <meta name="robots" content="index, follow">
+    <meta name="canonical" href="https://www.aeusteixeira.github.io/magic-seo/">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "WebPage",
+            "name": "MagicSEO - Otimização de Sites para SEO",
+            "description": "MagicSEO é um pacote PHP desenvolvido para facilitar a otimização de sites para mecanismos de busca (SEO).",
+            "author": {
+                "@type": "Person",
+                "name": "Matheus Teixeira (@aeusteixeira)"
+            },
+            "datePublished": "2023-06-07"
+        }
+    </script>
+<style>
+        /* Estilos CSS aqui */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        img {
+            width: 240px;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <img src="public/logo.png" alt="MagicSEO Logo">
+    <h1>MagicSEO</h1>
+</header>
+
+<div class="container">
+    <section>
+        <h2>MagicSEO</h2>
+        <p>MagicSEO é um pacote PHP desenvolvido para facilitar a otimização de sites para mecanismos de busca (SEO). Ele fornece uma série de ferramentas e funcionalidades que ajudam os desenvolvedores a implementar as melhores práticas de SEO em seus sites.</p>
+    </section>
+
+    <section>
+        <h2>Funcionalidades</h2>
+        <ul>
+            <li>Geração de Meta Tags: MagicSEO pode gerar meta tags adequadas para cada página, incluindo título, descrição, palavras-chave, etc.</li>
+            <li>Geração de Robots.txt: MagicSEO pode gerar um arquivo robots.txt que instrui os motores de busca sobre quais páginas eles podem ou não indexar.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Como usar</h2>
+        <ol>
+            <li>Instale o pacote usando o Composer:</li>
+            <pre><code>composer require aeusteixeira/magic-seo</code></pre>
+            <li>Importe as classes e funções necessárias em seus arquivos PHP:</li>
+            <pre><code>use Aeusteixeira\MagicSeo\MetaTags\MetaTagsGenerator;<br>use Aeusteixeira\MagicSeo\RobotsTxt\RobotsTxtGenerator;</code></pre>
+            <li>Crie uma instância da classe desejada e use seus métodos para gerar os elementos de SEO necessários:</li>
+            <pre><code>// Geração de Meta Tags<br>
+$metaTagsGenerator = new MetaTagsGenerator(<br>
+                    'Título da Página',<br>
+                    'Descrição da Página',<br>
+                    'Palavras-chave da Página');<br>
+$tagTitulo = $metaTagsGenerator->gerarTagTitulo();<br>
+$tagDescricao = $metaTagsGenerator->gerarTagDescricao();<br>
+$tagPalavrasChave = $metaTagsGenerator->gerarTagPalavrasChave();<br>
+<br>
+// Geração de Robots.txt<br>
+$robotsTxtGenerator = new RobotsTxtGenerator();<br>
+$robotsTxt = $robotsTxtGenerator->gerarRobotsTxt();</code></pre>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Instalação</h2>
+        <p>Para instalar o MagicSEO, você pode executar o seguinte comando no terminal:</p>
+        <pre><code>composer require aeusteixeira/magic-seo</code></pre>
+    </section>
+
+    <section>
+        <h2>Licença</h2>
+        <p>MagicSEO é um software de código aberto licenciado sob a <a href="https://opensource.org/licenses/MIT">licença MIT</a>.</p>
+    </section>
+</div>
+</body>
+
+</html>

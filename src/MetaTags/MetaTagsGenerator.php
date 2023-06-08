@@ -9,8 +9,8 @@ class MetaTagsGenerator
     private string $keywords;
     private string $author;
     private string $publicationDate;
-    private string $language;
-    private string $copyright;
+    private string $language = 'pt-br';
+    private string $copyright = '';
     private array $structuredData;
 
 
