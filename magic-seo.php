@@ -1,13 +1,14 @@
-<?php 
+<?php
+
+use Aeusteixeira\MagicSeo\PreviewImage\PreviewImageGenerator;
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Aeusteixeira\MagicSeo\MetaTags\MetaTagsGenerator;
-use Aeusteixeira\MagicSeo\RobotsTxt\RobotsTxtGenerator;
+$generator = new PreviewImageGenerator('Título da Página', 'Descrição da Página', 'path/to/background-image.jpg');
+$result = $generator->generateImage('path/to/output-image.jpg');
 
-$robotsTxtGenerator = new RobotsTxtGenerator();
-$robotsTxtGenerator->allow('/path1');
-$robotsTxtGenerator->allow('/path2');
-$robotsTxtGenerator->disallow('/path2');
-$robotsTxtGenerator->setSitemap('https://example.com/sitemap.xml');
-$robotsTxtGenerator->writeToFile(__DIR__ . '/robots.txt');
+if ($result) {
+    echo 'Imagem gerada com sucesso!';
+} else {
+    echo 'Falha ao gerar a imagem.';
+}
