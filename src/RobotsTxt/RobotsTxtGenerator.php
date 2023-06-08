@@ -12,7 +12,7 @@ class RobotsTxtGenerator
      * @param string $userAgent
      * @return void
      */
-    public function setUserAgent(string $userAgent): void
+    public function setUserAgent(string $userAgent) : void
     {
         $this->userAgent = $userAgent;
     }
@@ -21,7 +21,7 @@ class RobotsTxtGenerator
      * @param string $path
      * @return void
      */
-    public function allow(string $path): void
+    public function allow(string $path) : void
     {
         $this->rules[] = 'Allow: ' . $path;
     }
@@ -30,7 +30,7 @@ class RobotsTxtGenerator
      * @param string $path
      * @return void
      */
-    public function disallow(string $path): void
+    public function disallow(string $path) : void
     {
         $this->rules[] = 'Disallow: ' . $path;
     }
@@ -39,7 +39,7 @@ class RobotsTxtGenerator
      * @param string $sitemap
      * @return void
      */
-    public function setSitemap(string $sitemap): void
+    public function setSitemap(string $sitemap) : void
     {
         $this->sitemap = $sitemap;
     }
@@ -48,7 +48,7 @@ class RobotsTxtGenerator
      * Generate robots.txt file content
      * @return string
      */
-    public function generateRobotsTxt(): string
+    public function generateRobotsTxt() : string
     {
         $robotsTxt = 'User-agent: ' . $this->userAgent . "\n";
 
@@ -68,7 +68,7 @@ class RobotsTxtGenerator
      * @param string $filePath
      * @return void
      */
-    public function writeToFile(string $filePath): void
+    public function writeToFile(string $filePath) : void
     {
         file_put_contents($filePath, $this->generateRobotsTxt());
     }
