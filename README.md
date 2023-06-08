@@ -1,4 +1,6 @@
 # MagicSEO
+![enter image description here](https://raw.githubusercontent.com/aeusteixeira/magic-seo/master/public/logo.png)
+
 MagicSEO é um pacote PHP desenvolvido para facilitar a otimização de sites para mecanismos de busca (SEO). Ele fornece uma série de ferramentas e funcionalidades que ajudam os desenvolvedores a implementar as melhores práticas de SEO em seus sites.
 
 ## Funcionalidades
